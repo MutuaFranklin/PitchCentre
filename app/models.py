@@ -33,7 +33,7 @@ class Comment(db.Model):
     
     __tablename__ = 'comments'
     id = db.Column(db.Integer,primary_key = True)
-    pitch_id = db.Column(db.Integer)
+    pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.id"))
     pitch_title = db.Column(db.String)
     pitch_comment = db.Column(db.String)
     posted = db.Column(db.Time,default=datetime.utcnow())
