@@ -3,7 +3,7 @@ from flask import render_template,request,redirect,url_for, abort
 from flask_login import login_required, current_user 
 from ..models import User,Pitch, Comment
 from .. import db,photos
-from .forms import UpdateProfile, PitchForm
+from .forms import UpdateProfile, PitchForm, CommentForm
 
 
 
@@ -30,6 +30,9 @@ def home():
 
         db.session.add(pitch)
         db.session.commit()
+
+        return redirect (url_for ("main.home"))
+
 
     '''
     View root page function that returns the index page and its data
@@ -124,36 +127,23 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
     
 
-# @main.route('/home/postpitch/<int:id>',methods= ['POST'])
-# @login_required
-# def post_pitch():   
-#     pform = PitchForm()
+@main.route('/pitch/more<int:id>',methods=['GET','POST'])
+@login_required
+def more_pitch_details(id):
+    single_pitch=Pitch.query.get(id)
+    comments= Comment.query.filter_by(pitch_id=id).all()
+    cForm=CommentForm()
 
-#     if pform.validate_on_submit():
-#         pitch = Pitch(pitch_content = pform.pitch.data, cat_id = pform.category.data)
+    if cForm.validate_on_submit():
+        comment = Comment(pitch_comment = cForm.comment.data,pitch_id=single_pitch.pitch_id, user=current_user)
 
-#         db.session.add(pitch)
-#         db.session.commit()
+
+        db.session.add(comment)
+        db.session.commit()
+        return redirect (url_for ("main.more_pitch_details", id= single_pitch.pitch_id))
+
+
     
-#     return render_template('home.html' ,pform = pform, pid =id)
+    return render_template('more_pitch_details.html',comments=comments, single_pitch=single_pitch, cForm=cForm )
 
- 
-# @main.route('/promotion')
-# def fun():
-
-#     '''
-#     View root page function that returns the index page and its data
-#     '''
-#     title = 'PC Promotion'
-#     return render_template('index.html', title = title)
-
-
-# @main.route('/interview')
-# def index():
-
-#     '''
-#     View root page function that returns the index page and its data
-#     '''
-#     title = 'PC Interview'
-#     return render_template('index.html', title = title)
-
+   
