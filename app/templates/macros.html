@@ -1,0 +1,38 @@
+{% macro displayPitches(pitches) %}
+
+    {% for pitch in pitches  %}
+    <div class="card m-5" style="max-width: 540px;">
+    <a href="" target="_blank">
+        <div class="row g-0">
+        <div class="col-md-4" >
+            {% if pitch.user.profile_pic_path %}
+
+            <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="height:100%; width: 100%;"alt="...">
+        
+            {%else%}
+            <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" alt="" class="img-thumbnail">  
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <p class="card-text"><small class="text-muted">{{ pitch.user.username}}</small></p>
+            <h5 class="card-title">{{ pitch.pitch_title }}</h5>
+            <p class="card-text">{{pitch.category}}</p>
+            <p class="card-text">{{pitch.pitch_content}}</p>
+            <p class="card-text"><small class="text-muted">Posted on {{ pitch.posted}}</small></p>
+            <div class="row">
+                <p class="card-text"><small class="text-muted">5 comments</small></p>
+                <p class="card-text"><small class="text-muted">Likes:{{pitch.up_vote}}</small></p>
+                <p class="card-text"><small class="text-muted">Dislikes{{ pitch.down_vote}}</small></p>
+
+            </div>
+
+            <p><a href="">Read More</a></p>
+
+            </div>
+        </div>
+        </div>
+    </a>
+    </div>
+    {% endfor %}
+{% endmacro %}
