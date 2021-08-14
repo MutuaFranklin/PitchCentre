@@ -18,3 +18,6 @@ class PitchForm(FlaskForm):
     category =SelectField("Pitch category",choices=[('Product Pitch','Product Pitch'),('Interview Pitch','Interview Pitch'), ('Technology Pitch','Technology Pitch'), ('Fashion Pitch','Fashion Pitch')],validators=[Required()])    
     submit = SubmitField('Post')
 
+class CommentForm(FlaskForm):
+    comment = StringField('Add Comment', validators=[Required()])
+    submit = SubmitField('Post')
