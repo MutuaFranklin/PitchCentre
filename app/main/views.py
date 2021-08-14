@@ -45,7 +45,8 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    return render_template("profile/profile.html", user = user)
+    pitches = Pitch.query.all()
+    return render_template("profile/profile.html", user = user, pitches = pitches)
 
 @main.route('/product')
 def product():
