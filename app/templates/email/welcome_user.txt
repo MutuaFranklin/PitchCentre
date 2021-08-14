@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to PitchCenter Application
+We have just seen you have signed up for our application and want to welcome you to the family. Please feel free to post pitches, comment and vote for available posted pitches.

@@ -3,3 +3,8 @@ Migrations
 **python manage.py db init**
 python manage.py db migrate -m "comment"
 python manage.py db upgrade
+
+
+user = User.query.filter_by(id=2).first()
+db.session.delete(user)
+db.session.commit()

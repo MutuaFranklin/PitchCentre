@@ -1,39 +1,45 @@
-    
- <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">PitchCentre</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<div class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Promotion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Interview</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Pickup Lines</a>
-          </li>
-
-          <li class="nav-item"></li>
-          <li class="nav-item"></li>
-          <li class="nav-item"> </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url_for('auth.login')}}">Sign In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url_for('auth.signup')}}">Sign Up</a>
-          </li>
-        </ul>
-       
-      </div>
+      <a class="navbar-brand" href="/"> PitchCentre </a>
     </div>
-  </nav>
-  
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+
+
+
+
+          {% if current_user.is_authenticated %}
+          <li><a href="{{url_for('main.home')}}">Home</a></li>
+          <li><a href="{{url_for('main.product')}}">Product</a></li>
+          <li><a href="{{url_for('main.interview')}}">Interview</a></li>
+          <li><a href="{{url_for('main.fashion')}}">Fashion</a></li>
+
+          <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+          <li style="color:white;padding:15px;">{{current_user.username}}</li>          
+          <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+          {% else %}
+          
+          <li><a href="/">PitchHome</a></li>
+          <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+          <li><a href="{{url_for('auth.register')}}">Sign Up</a></li>
+
+          {%endif%}
+          
+        </ul>
+    </div>
+
+  </div>
+</div> 
+ 
+ 
+ 
+ 
+ 
+ 
