@@ -10,13 +10,12 @@ def load_user(user_id):
 
 class Pitch(db.Model):
     __tablename__ = 'pitches'
-    id = db.Column(db.Integer,primary_key = True)
-    pitch_id = db.Column(db.Integer)
+    pitch_id = db.Column(db.Integer,primary_key = True)
     pitch_title = db.Column(db.String)
     pitch_content = db.Column(db.String)
     posted = db.Column(db.Time,default=datetime.utcnow())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-    cat_id = db.Column(db.Integer,db.ForeignKey("categories.id"))
+    category= db.Column(db.String)
     up_vote = db.Column(db.Integer, default=0)
     down_vote = db.Column(db.Integer, default = 0)
     comments = db.relationship('Comment',backref = 'comment',lazy="dynamic")
@@ -31,24 +30,22 @@ class Pitch(db.Model):
 
 
     @classmethod
-    def get_pitches(cls,id):
+    def get_pitches(cls,pitch_id):
 
-        pitches = Categories.query.filter_by(users_id=id).all()
+        pitches = Pitch.query.filter_by(pitch_id=pitch_id).all()
         return pitches
 
 class Comment(db.Model):
     
     __tablename__ = 'comments'
     id = db.Column(db.Integer,primary_key = True)
-    pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.id"))
+    pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.pitch_id"))
     pitch_comment = db.Column(db.String)
     posted = db.Column(db.Time,default=datetime.utcnow())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
 
-
-
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
@@ -56,33 +53,11 @@ class Comment(db.Model):
 
 
     @classmethod
-    def get_comments(cls,id):
+    def get_comments(cls,pitch_id):
 
-        comments = Comment.query.filter_by(pitch_id=id).all()
+        comments = Comment.query.filter_by(pitch_id=pitch_id).all()
         return comments
 
-class Categories(db.Model):
-    
-    __tablename__ = 'categories'
-    id = db.Column(db.Integer,primary_key = True)
-    category_title = db.Column(db.String)
-    pitch = db.relationship('Pitch',backref = 'cats',lazy="dynamic")
-
-
-
-
-
-    def save_comment(self):
-        db.session.add(self)
-        db.session.commit()
-
-
-
-    @classmethod
-    def get_comments(cls,id):
-
-        comments = Comment.query.filter_by(pitch_id=id).all()
-        return comments
 
 
 class User(UserMixin,db.Model):

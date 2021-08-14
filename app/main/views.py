@@ -25,7 +25,8 @@ def home():
     pform = PitchForm()
 
     if pform.validate_on_submit():
-        pitch = Pitch(pitch_content = pform.pitch.data, cat_id = pform.category.data)
+        pitch = Pitch(pitch_title = pform.title.data, category = pform.category.data, pitch_content = pform.pitch.data, user=current_user)
+
 
         db.session.add(pitch)
         db.session.commit()
@@ -33,8 +34,9 @@ def home():
     '''
     View root page function that returns the index page and its data
     '''
+    pitches = Pitch.query.all()
     title = 'PitchCentere Home'
-    return render_template('home.html', title = title, pform = pform)
+    return render_template('home.html', title = title, pform = pform, pitches=pitches)
 
 @main.route('/user/<uname>')
 def profile(uname):
