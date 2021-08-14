@@ -57,36 +57,39 @@ def profile(uname):
 def product():
 
     title = 'Pitch-Product'
-
+    h4 = 'Interview Pitches'
     random = "Product Pitch"
     pitches = Pitch.query.filter_by(category =random).all()
 
-    return render_template('categories.html', title = title, pitch=pitches)
+    return render_template('categories.html', title = title, pitch=pitches, h4=h4)
 
 @main.route('/interview')
 def interview():
 
     title = 'Pitch-Interview'
+    h4 = 'Interview Pitches'
     random = "Interview Pitch"
     pitches = Pitch.query.filter_by(category =random).all()
-    return render_template('categories.html', title = title, pitch = pitches)
+    return render_template('categories.html', title = title, pitch = pitches, h4 =h4)
 
 
 @main.route('/technology')
 def technology():
 
-    title = 'Technology-Product'
+    title = 'Technology-Pitch'
+    h4 = 'Technology Pitches'
     random = "Technology Pitch"
     pitches = Pitch.query.filter_by(category =random).all()
-    return render_template('categories.html', title = title, pitch = pitches)
+    return render_template('categories.html', title = title, pitch = pitches, h4 =h4)
     
 @main.route('/fashion')
 def fashion():
 
     title = 'Fashion-Product'
+    h4 = 'Fashion Pitches'
     random = "Fashion Pitch"
     pitches = Pitch.query.filter_by(category =random).all()
-    return render_template('categories.html', title = title, pitch = pitches)
+    return render_template('categories.html', title = title, pitch = pitches, h4 =h4)
     
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
