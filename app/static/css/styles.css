@@ -1,0 +1,13 @@
+.topheader{
+    display: flex;
+    justify-content:stretch;
+}
+
+.pitch-content{
+    display: flex;
+}
+
+.more-details{
+    display:flex;
+    justify-content: center;
+}
