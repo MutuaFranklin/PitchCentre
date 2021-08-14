@@ -35,8 +35,13 @@ def home():
     View root page function that returns the index page and its data
     '''
     pitches = Pitch.query.all()
+    # random = "Product Pitch"
+    # pitches = Pitch.query.filter_by(category =random).all()
+
     title = 'PitchCentere Home'
-    return render_template('home.html', title = title, pform = pform, pitches=pitches)
+    return render_template('home.html', title = title, pform = pform, pitch=pitches)
+
+
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -45,33 +50,43 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    pitches = Pitch.query.all()
-    return render_template("profile/profile.html", user = user, pitches = pitches)
+    pitches = Pitch.query.filter_by(user=current_user)
+    return render_template("profile/profile.html", pitches = pitches,user=current_user)
 
 @main.route('/product')
 def product():
 
     title = 'Pitch-Product'
-    return render_template('categories.html', title = title)
+
+    random = "Product Pitch"
+    pitches = Pitch.query.filter_by(category =random).all()
+
+    return render_template('categories.html', title = title, pitch=pitches)
 
 @main.route('/interview')
 def interview():
 
     title = 'Pitch-Interview'
-    return render_template('categories.html', title = title)
+    random = "Interview Pitch"
+    pitches = Pitch.query.filter_by(category =random).all()
+    return render_template('categories.html', title = title, pitch = pitches)
 
 
 @main.route('/technology')
 def technology():
 
     title = 'Technology-Product'
-    return render_template('categories.html', title = title)
+    random = "Technology Pitch"
+    pitches = Pitch.query.filter_by(category =random).all()
+    return render_template('categories.html', title = title, pitch = pitches)
     
 @main.route('/fashion')
 def fashion():
 
     title = 'Fashion-Product'
-    return render_template('categories.html', title = title)
+    random = "Fashion Pitch"
+    pitches = Pitch.query.filter_by(category =random).all()
+    return render_template('categories.html', title = title, pitch = pitches)
     
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
