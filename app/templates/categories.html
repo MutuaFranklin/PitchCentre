@@ -12,8 +12,9 @@
 {% block content %}
 <div class="container-fluid content">
   <div class="row">
-    <h5>Posts</h5>
-
+    {% if h4 %}
+    <h4> {{ h4 }}</h4>
+    {% endif %}
       {{macro.displayPitches(pitch)}}    
   </div>
 
