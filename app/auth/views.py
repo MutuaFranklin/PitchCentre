@@ -43,4 +43,4 @@ def register():
     title = "New Account"
 
         
-    return render_template('auth/signup.html',registration_form = form)
+    return render_template('auth/signup.html',registration_form = form, title = title)
