@@ -4,7 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    {% block styles%}
+    {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    {% endblock %}
     {% if title %}
     <title> {{ title }}</title>
     {% else %}
@@ -13,13 +18,7 @@
 </head>
 
 <body>
-    {%block styles %}
-        {{super()}}
-        <!--Importing the simple mde css and js files  -->
-       
     
-    {% endblock %}
-
     <!-- Navbar block  -->
     {% block navbar %}
         {% include 'navbar.html' %}
