@@ -9,7 +9,7 @@ from .forms import UpdateProfile, PitchForm, CommentForm
 
 
 
-@main.route('/landingPage')
+@main.route('/')
 def index():
 
     '''

@@ -1,18 +1,61 @@
-.topheader{
-    display: flex;
-    justify-content:space-between;
+.navbar{
+    background-color: transparent;
+    border: none;
+
 }
 
-.pitch-content{
-    display: flex;
-}
-
-.more-details{
+.navbar-nav li a{
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 20px;
     
 }
 
+.navbar-brand{
+    color: white !important;
+    font-size: 17px;
+    font-weight: bold;
+    
+}
+  
+
+ body{
+    height: 870px;
+    width: 100%;
+    background-color: rgb(42, 13, 93);
+
+}
+
+.login{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(42, 13, 93, 0.1);
+
+}
+
+.signup{
+
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(42, 13, 93, 0.1);
+
+}
 
 .pitch-card{
-    border: 2px solid black;
-    background-color: rgb(140, 120, 158);
+    border: 1px solid grey;
+    margin: 3px;
+    color: white;
+    background-color: rgb(25, 2, 88);
+}
+
+.home{
+    color: white;
 }
