@@ -8,6 +8,14 @@
 }
 
 .more-details{
-    display:flex;
-    justify-content: center;
+    
+}
+
+.homepitch{
+    display: flex;
+}
+
+.pitch-card{
+    border: 2px solid black;
+    background-color: rgb(140, 120, 158);
 }
