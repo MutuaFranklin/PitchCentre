@@ -8,6 +8,6 @@
 
 
 .topheader{
-    display: flex;
-    justify-content:stretch;
+    font-weight: bold;
+    background-color: rgb(71, 49, 87, 0.5);
 }

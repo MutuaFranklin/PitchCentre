@@ -13,23 +13,32 @@
       <div class="container more-details">
         <div class="col-md-12">
 
-          <div class="col-md-10">
-            <div class="row topheader">
-              <div class="username">Posted by {{single_pitch.user.username}}</div>
-              <div class="datetime"> on: {{ single_pitch.posted}}</div>
-            </div> 
-
-            <div class="col-md-12">
-              <h4>{{single_pitch.pitch_title}}</h4>
-              <h5>Category:{{single_pitch.category}}</h5>
-              <p>{{single_pitch.pitch_content}}</p>
-              <div class="row col-md-12 d-flex">
-                <p><i class="fas fa-thumbs-up"></i></p>
-                <p><i class="fas fa-thumbs-down"></i></p>
-
-              </div>
+          <div class="col-md-12">
             
-            </div> 
+            <div class="jumbotron">
+              <div class="container">
+                <div class="row topheader">
+                  <div class="col-md-6">Posted by {{single_pitch.user.username}}</div>
+                  <div class="col-md-6"> on: {{ single_pitch.posted}}</div>
+                </div> 
+    
+                <div class="col-md-12">
+                  <h4>{{single_pitch.pitch_title}}</h4>
+                  <h5>Category:{{single_pitch.category}}</h5>
+                  <p>{{single_pitch.pitch_content}}</p>
+                  <div class="row col-md-12 d-flex">
+                    <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up">{{single_pitch.up_vote}}</i></button>
+                        
+                    <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down">{{single_pitch.down_vote}}</i></button>
+    
+                  </div>
+                
+                </div> 
+                
+              </div>
+            </div>
+            
+           
 
           
 
@@ -59,7 +68,7 @@
 
           </div>
         </div>
-
+b
 
           
 
