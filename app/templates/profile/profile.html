@@ -1,5 +1,8 @@
 {% extends 'base.html'%}
 {% import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros.html' as macro %}
+
+
 
 
 {% block content %}
@@ -11,10 +14,10 @@
     <div class="col-md-4">
       {% if user.profile_pic_path %}
   
-      <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+      <img src="{{url_for('static',filename=user.profile_pic_path)}}"style="border-radius: 50%; height:100%; width: 100%;" alt="" class="img-thumbnail">
   
       {%else%}
-      <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" alt="" class="img-thumbnail">  
+      <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" style="border-radius: 50%; height:150px; width: 100%;"alt="" class="img-thumbnail">  
       {% endif %}
       <h3> {{user.username| capitalize}} </h3>
 
@@ -38,38 +41,15 @@
 
 
     </div>
-    <div class="col-md-4">
-      {{simplemde.load}}
+    <div class="col-md-8">
 
       <h5>Your Posts</h5>
-      {% for pitch in pitches  %}
-      <div class="card m-5" style="max-width: 540px;">
-        <a href="" target="_blank">
-          <div class="row g-0">
-            <div class="col-md-4" >
-              {% if pitch.user.profile_pic_path %}
-  
-              <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="height:100%; width: 100%;"alt="...">
-            
-              {%else%}
-                <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" alt="" class="img-thumbnail">  
-              {% endif %}            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <p class="card-text"><small class="text-muted">{{ pitch.user.username}}</small></p>
-                <h5 class="card-title">{{ pitch.pitch_title }}</h5>
-                <p class="card-text">{{pitch.category}}</p>
-                <p class="card-text">{{pitch.pitch_content}}</p>
-                <p class="card-text"><small class="text-muted">Posted on {{ pitch.posted}}</small></p>
-                <p class="card-text"><small class="text-muted">5 comments</small></p>
+      <div class="d-flex justify-content-center" >
+              {{macro.displayPitches(pitches)}}
 
-                <p>Read More</p>
-              </div>
-            </div>
-          </div>
-        </a>
       </div>
-      {% endfor %}
+
+
 
     </div>
 
