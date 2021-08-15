@@ -13,7 +13,7 @@ class UpdateProfile(FlaskForm):
 
 
 class PitchForm(FlaskForm):
-    title = StringField('Enter the title of your pitch pitch',validators=[Required()])
+    title = StringField('Enter the title of your pitch',validators=[Required()])
     pitch = StringField('Enter your pitch',validators=[Required()])
     category =SelectField("Pitch category",choices=[('Product Pitch','Product Pitch'),('Interview Pitch','Interview Pitch'), ('Technology Pitch','Technology Pitch'), ('Fashion Pitch','Fashion Pitch')],validators=[Required()])    
     submit = SubmitField('Post')
