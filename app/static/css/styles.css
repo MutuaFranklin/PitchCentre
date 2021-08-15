@@ -137,10 +137,41 @@
 }
 
 
-.profile{
+.profile .row{
     display: flex;
     justify-content: center;
 }
 
+.profile-details{
+    color: white;
+}
+
+.user-profile{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.prof-update-form{
+    margin-top: 15px;
+
+}
+.prof-update-form input{
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+
+}
+.index{
+   
+}
+.index-image{
+
+
+}
+
+.index-image img{
+    border-radius: 5%;
+
+}
 
 
