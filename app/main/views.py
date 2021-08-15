@@ -134,6 +134,23 @@ def more_pitch_details(id):
     comments= Comment.query.filter_by(pitch_id=id).all()
     cForm=CommentForm()
 
+    if request.args.get("up_vote"):
+        single_pitch.up_vote = single_pitch.up_vote+1
+
+        db.session.add(single_pitch)
+        db.session.commit()
+
+        # return redirect("/pitch/more/{pitch_id}",pitch_id= single_pitch.pitch_id)
+
+    elif request.args.get("down_vote"):
+        single_pitch.down_vote=single_pitch.down_vote+1
+
+        db.session.add(single_pitch)
+        db.session.commit()
+
+        # return redirect("/pitch/more/{pitch_id}", pitch_id= single_pitch.pitch_id)
+    
+
     if cForm.validate_on_submit():
         comment = Comment(pitch_comment = cForm.comment.data,pitch_id=single_pitch.pitch_id, user=current_user)
 
