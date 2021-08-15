@@ -132,7 +132,11 @@ def update_pic(uname):
 def more_pitch_details(id):
     single_pitch=Pitch.query.get(id)
     comments= Comment.query.filter_by(pitch_id=id).all()
+    commentCount = 'pitch_comment'
+    # total_comments = Comment.query.filter_by(commentCount).count()
+
     cForm=CommentForm()
+
 
     if request.args.get("up_vote"):
         single_pitch.up_vote = single_pitch.up_vote+1
@@ -157,10 +161,14 @@ def more_pitch_details(id):
 
         db.session.add(comment)
         db.session.commit()
+
+        
         return redirect (url_for ("main.more_pitch_details", id= single_pitch.pitch_id))
 
 
+
+
     
-    return render_template('more_pitch_details.html',comments=comments, single_pitch=single_pitch, cForm=cForm )
+    return render_template('more_pitch_details.html',comments=comments, single_pitch=single_pitch, cForm=cForm)
 
    

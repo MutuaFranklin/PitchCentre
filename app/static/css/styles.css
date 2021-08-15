@@ -1,6 +1,6 @@
 .topheader{
     display: flex;
-    justify-content:stretch;
+    justify-content:space-between;
 }
 
 .pitch-content{
@@ -11,9 +11,6 @@
     
 }
 
-.homepitch{
-    display: flex;
-}
 
 .pitch-card{
     border: 2px solid black;

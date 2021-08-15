@@ -1,0 +1,13 @@
+.index{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTO2RjtxWE_APodAD0pF3hcTZSWWUHYK207A&usqp=CAU");
+    background-size: cover;
+
+}
+
+
+.topheader{
+    display: flex;
+    justify-content:stretch;
+}

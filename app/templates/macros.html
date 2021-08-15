@@ -1,42 +1,19 @@
-
-    
-   
-
-{%macro displayComments(comments)%}
-
-    {% for comment in comments  %}
-
-        {{comment.pitch_comment}}
-
-        {{ comment.user.username}}
-
-        {{comment.posted}}
-
-
-
-
-    {% endfor %}
-
-{% endmacro %}
-
 {% macro displayPitches(pitches) %}
 
     {% for pitch in pitches  %}
-
-
-    <div class="row col-md-12 mb-5 pitch-card">
+    <div class="row col-md-6 mb-5 pitch-card">
         <div class="col-md-2">
             {% if pitch.user.profile_pic_path %}
 
-                <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="border-radius: 50%; height:150px; width: 100%;"alt="...">
+                <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="border-radius: 50%; height:100px; width: 100%;"alt="...">
             
                 {%else%}
                 <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" alt="" class="img-thumbnail">  
             {% endif %}
         
         </div>
-        <div class="col-md-9">
-            <p><small class="text-muted">{{ pitch.user.username}}</small></p>
+        <div class="col-md-10">
+            <p class="text-muted">{{ pitch.user.username}}</p>
             <hr>
             <div>
                 <h4>{{ pitch.pitch_title }}</h4>
@@ -62,6 +39,22 @@
         </div>
     
     </div>
+    {% endfor %}
+
+{% endmacro %}
+
+
+
+{%macro displayComments(comments)%}
+
+    {% for comment in comments  %}
+        <div class="col md-12">
+            <p class="text-muted">{{ comment.user.username}}</p>
+            <p> {{comment.pitch_comment}}</p>
+            <p><small class="text-muted">Posted on  {{comment.posted}}</small></p>
+
+        </div>
+        <hr>
     {% endfor %}
 
 {% endmacro %}
