@@ -15,21 +15,23 @@
 
     <div class="row">
 
-      <div class="col-md-6">
-        <h5>Overview</h5>
+      <div class="col-md-4">
+        <h5>Pitch submit </h5>
         <div class="container-fluid">
-          <div class="col-md-3">
+          <div class="col-md-8">
               {{wtf.quick_form(pform)}}
 
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-8">
         <h5>Posts</h5>
-          <ul>
-            {{macro.displayPitches(pitch)}}
-          </ul>       
+          <div class="row homepitches">
+              {{macro.displayPitches(pitch)}}
+
+          </div>
+              
 
       </div>
 
