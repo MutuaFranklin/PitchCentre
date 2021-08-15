@@ -8,10 +8,10 @@
         <div class="col-md-2">
             {% if pitch.user.profile_pic_path %}
 
-                <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="border-radius: 50%; height:100px; width: 100%;"alt="...">
+                <img src="{{ url_for('static',filename=pitch.user.profile_pic_path)}}" style="border-radius: 50%; margin-top: 15px; height:70px; width: 100%;"alt="...">
             
                 {%else%}
-                <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" alt="" class="img-thumbnail">  
+                <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" style="border-radius: 50%; height:100px; width: 100%;" alt="" class="img-thumbnail">  
             {% endif %}
         
         </div>
@@ -19,14 +19,14 @@
             <p class="text-muted">{{ pitch.user.username}}</p>
             <hr>
             <div>
-                <h4>{{ pitch.pitch_title }}</h4>
+                <h3>{{ pitch.pitch_title }}</h3>
                 <h5>Category: {{pitch.category}}</p>
                 <hr>
-                <p>{{pitch.pitch_content}}</p>
-                <p><small class="text-muted">Posted on {{ pitch.posted}}</small></p>
+                <p>{{pitch.pitch_content | truncate(40)}}</p>
+                <p class="text-muted">Posted on {{ pitch.posted}}</p>
                 <div class="row">
                     
-                    <button type="button" class="btn btn-warning">0 Comments</button>
+                    <button type="button" class="btn btn-primary">0 Comments</button>
                     
                     <button type="button" class="btn btn-success">{{pitch.up_vote}} Likes</button>
                     
@@ -52,9 +52,9 @@
 
     {% for comment in comments  %}
         <div class="col md-12">
-            <p class="text-muted">{{ comment.user.username}}</p>
+            <p class="text-muted user">{{ comment.user.username}}</p>
             <p> {{comment.pitch_comment}}</p>
-            <p><small class="text-muted">Posted on  {{comment.posted}}</small></p>
+            <p class="text-muted time">Commented on  {{comment.posted}}</p>
 
         </div>
         <hr>

@@ -51,11 +51,96 @@
 
 .pitch-card{
     border: 1px solid grey;
-    margin: 3px;
+    margin: 5px;
     color: white;
-    background-color: rgb(25, 2, 88);
+    background-color: rgb(35, 5, 75, 0.8);
+
+    box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+
+}
+
+.pitch-card:hover{
+    filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+    transform: scale(1);
+
+
 }
 
 .home{
     color: white;
 }
+
+.home h4{
+    text-align: center;
+
+}
+
+.pitch-card p{
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pitch-card button{
+    margin-left: 10px;
+}
+
+
+.topheader{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+}
+
+.more-details .buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+.more-details .buttons .fas{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.more-details .user-details{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.more-details .commentForm{
+    color: white;
+}
+
+.more-details .comments{
+    color: white;
+    font-size: 15px;
+
+}
+
+.more-details .comments .user{
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.more-details .comments .time{
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.jumbotron{
+    background-color: rgb(161, 165, 199);
+}
+
+
+.profile{
+    display: flex;
+    justify-content: center;
+}
+
+
+

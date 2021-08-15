@@ -5,7 +5,7 @@
 <!-- Styles block -->   
 {% block styles%}
   {{ super() }}
-  <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 {% endblock %}
 
 {% block content%}
@@ -17,21 +17,25 @@
             
             <div class="jumbotron">
               <div class="container">
-                <div class="row topheader">
-                  <div class="col-md-6">Posted by {{single_pitch.user.username}}</div>
-                  <div class="col-md-6"> on: {{ single_pitch.posted}}</div>
+                <div class="topheader">
+                  <h2>{{single_pitch.category}} category</h2>
+                  <h3>{{single_pitch.pitch_title}}</h3>
                 </div> 
+                <hr>
     
-                <div class="col-md-12">
-                  <h4>{{single_pitch.pitch_title}}</h4>
-                  <h5>Category:{{single_pitch.category}}</h5>
+                <div class="content">
                   <p>{{single_pitch.pitch_content}}</p>
-                  <div class="row col-md-12 d-flex">
-                    <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up">{{single_pitch.up_vote}}</i></button>
+
+                </div>
+                  <div class="row buttons">
+                    <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up"></i>{{single_pitch.up_vote}}</button>
                         
-                    <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down">{{single_pitch.down_vote}}</i></button>
+                    <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down"></i>{{single_pitch.down_vote}}</button>
     
                   </div>
+                <div class="row user-details">
+                  <div class="username">Posted by {{single_pitch.user.username}} on: {{ single_pitch.posted}}</div>
+                </div>
                 
                 </div> 
                 
@@ -54,15 +58,15 @@
             
           -->
     
-          <div class="col-md-10">
-            <div class="col-md-5">
+          <div class="col-md-12 commentForm">
+            <div class="col-md-8">
               {{wtf.quick_form(cForm)}}
             </div>
           </div>
 
-          <div class="col-md-5 mb-5">
+          <div class="col-md-12 comments">
             <hr>
-            <button type="button" class="btn btn-warning">0 Comments</button>
+            <button type="button" class="btn btn-primary">0 Comments</button>
             <hr>
             {{macro.displayComments(comments)}}
 
