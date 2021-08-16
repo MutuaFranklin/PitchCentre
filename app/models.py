@@ -44,7 +44,7 @@ class Pitch(db.Model):
     pitch_id = db.Column(db.Integer,primary_key = True)
     pitch_title = db.Column(db.String)
     pitch_content = db.Column(db.String)
-    posted = db.Column(db.Time,default=datetime.now())
+    posted = db.Column(db.DateTime,default=datetime.now())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     category= db.Column(db.String)
     up_vote = db.Column(db.Integer, default=0)
@@ -72,7 +72,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.pitch_id"))
     pitch_comment = db.Column(db.String)
-    posted = db.Column(db.Time,default=datetime.now())
+    posted = db.Column(db.DateTime,default=datetime.now())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
