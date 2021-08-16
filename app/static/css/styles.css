@@ -150,15 +150,21 @@
     background-color: rgb(161, 165, 199);
 }
 
+/* PROFILE PAGE */
 
 .profile .row{
     display: flex;
     justify-content: center;
 }
 
+.profile h4{
+    text-align: center;
+    font-weight: 900;
+    color: rgb(18, 160, 243);
+    font-size: 15px;
+}
 .profile-details{
     color: rgb(18, 160, 243);
-    text-align: center;
 }
 
 .user-profile{
@@ -166,6 +172,7 @@
     text-align: center;
     color: white;
     font-weight: bold;
+
 }
 
 .prof-update-form{
@@ -179,6 +186,9 @@
     font-weight: bold;
 
 }
+
+
+/* INDEX PAGE */
 
 .description{
     display: flex;
@@ -194,11 +204,4 @@
 
 }
 
-
-.your-posts{
-    color: rgb(18, 160, 243);
-    text-align: center;
-    font-weight: bold;
-    font-size: 15px;
-}
 
