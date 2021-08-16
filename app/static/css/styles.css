@@ -5,7 +5,7 @@
 }
 
 .navbar-nav li a{
-    color: white !important;
+    color: thistle !important;
     font-size: 14px;
     font-weight: 500;
     margin-right: 20px;
@@ -13,7 +13,7 @@
 }
 
 .navbar-brand{
-    color: white !important;
+    color: thistle !important;
     font-size: 25px;
     font-weight: bold;
     font-family: 'Rancho', cursive;
@@ -203,6 +203,7 @@
     font-weight: bold;
     font-size: 54px;
     font-family: 'Rancho', cursive;
+    color: thistle;
 }
 
 .welcome-text{
@@ -211,9 +212,20 @@
     text-align: center;
 }
 
+.quick-notes{
+    font-size: 25px;
+    color: thistle;
+    
+    
+}
+
+.quick-notes h3{
+    color: rgb(18, 160, 243);
+    font-weight: bold;
+}
+
 .index-image img{
     border-radius: 5%;
-    height: 100%;
 
 }
 
