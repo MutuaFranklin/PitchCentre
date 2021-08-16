@@ -161,12 +161,14 @@
     font-weight: bold;
 
 }
-.index{
-   
-}
-.index-image{
 
-
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 34px;
 }
 
 .index-image img{
