@@ -190,18 +190,38 @@
 
 /* INDEX PAGE */
 
+.index{
+
+
+}
 .description{
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
-    font-size: 34px;
+    font-size: 54px;
+    font-family: 'Rancho', cursive;
+}
+
+.welcome-text{
+    border: 1px solid white;
+    margin: 5px;
+    text-align: center;
 }
 
 .index-image img{
     border-radius: 5%;
+    height: 100%;
 
 }
 
 
+/* CATEGORIES PAGES */
+
+.categories h4{
+    color: rgb(18, 160, 243);
+    font-weight: bold;
+    font-size: 15px;
+}
