@@ -56,14 +56,14 @@ Run source pitchVirtual/bin/activate to activate the virtual environment and ./s
 ## BDD
 
 As a user, I would like to:
-    - see the pitches other people have posted.
-    - vote on the pitch they liked and give it a downvote or upvote.
-    - be signed in for me to leave a comment
-    - receive a welcoming email once I sign up.
-    - view the pitches I have created in my profile page.
-    - comment on the different pitches and leave feedback.
-    - submit a pitch in any category.
-    - view the different categories.
+- see the pitches other people have posted.
+- vote on the pitch they liked and give it a downvote or upvote.
+- be signed in for me to leave a comment
+- receive a welcoming email once I sign up.
+- view the pitches I have created in my profile page.
+- comment on the different pitches and leave feedback.
+- submit a pitch in any category.
+- view the different categories.
 
 
 ## Technologies Used
