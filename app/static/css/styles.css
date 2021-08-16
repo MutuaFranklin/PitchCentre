@@ -149,6 +149,14 @@
 
 }
 
+.more-details .comments input{
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+
 .jumbotron{
     background-color: rgb(161, 165, 199);
 }
