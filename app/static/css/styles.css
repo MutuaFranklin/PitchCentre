@@ -40,6 +40,19 @@
 
 }
 
+.signup{
+
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.signup .row{
+    top: 5%;
+}
 
 .pitch-card{
     border: 1px solid grey;
