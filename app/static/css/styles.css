@@ -7,15 +7,17 @@
 .navbar-nav li a{
     color: white !important;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
     margin-right: 20px;
-    
+    font-family: 'Aclonica', sans-serif;
 }
 
 .navbar-brand{
     color: white !important;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: bold;
+    font-family: 'Rancho', cursive;
+
     
 }
   
@@ -24,6 +26,7 @@
     height: 870px;
     width: 100%;
     background-color: rgb(42, 13, 93);
+
 
 }
 
@@ -54,7 +57,7 @@
     margin: 5px;
     color: white;
     background-color: rgb(35, 5, 75, 0.8);
-
+    font-family: 'Niconne', cursive;
     box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
     transform: scale(0.98);
 
@@ -73,17 +76,21 @@
 
 .home h4{
     text-align: center;
+    font-weight: 900;
+    color: rgb(18, 160, 243);
+    font-size: 15px;
 
 }
 
 .pitch-card p{
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 23px;
     font-weight: bold;
 }
 
 .pitch-card button{
     margin-left: 10px;
+    font-size: 20px;
 }
 
 
@@ -92,6 +99,11 @@
     flex-direction: column;
     font-weight: bold;
     text-align: center;
+}
+
+.more-details{
+    font-family: 'Rancho', cursive;
+    font-size: 20px;
 }
 
 .more-details .buttons{
@@ -112,23 +124,25 @@
 
 .more-details .commentForm{
     color: white;
+    font-size: 17px;
 }
 
 .more-details .comments{
-    color: white;
-    font-size: 15px;
+    color: rgb(18, 160, 243);
+    font-size: 20px;
 
 }
 
 .more-details .comments .user{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
 
 }
 
 .more-details .comments .time{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 17px;
+    color: white;
 
 }
 
@@ -143,16 +157,20 @@
 }
 
 .profile-details{
-    color: white;
+    color: rgb(18, 160, 243);
+    text-align: center;
 }
 
 .user-profile{
     padding-top: 20px;
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 .prof-update-form{
     margin-top: 15px;
+    color: white;
 
 }
 .prof-update-form input{
@@ -176,4 +194,11 @@
 
 }
 
+
+.your-posts{
+    color: rgb(18, 160, 243);
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
 

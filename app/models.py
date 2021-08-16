@@ -44,7 +44,7 @@ class Pitch(db.Model):
     pitch_id = db.Column(db.Integer,primary_key = True)
     pitch_title = db.Column(db.String)
     pitch_content = db.Column(db.String)
-    posted = db.Column(db.Time,default=datetime.utcnow())
+    posted = db.Column(db.Time,default=datetime.now())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     category= db.Column(db.String)
     up_vote = db.Column(db.Integer, default=0)
@@ -72,7 +72,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.pitch_id"))
     pitch_comment = db.Column(db.String)
-    posted = db.Column(db.Time,default=datetime.utcnow())
+    posted = db.Column(db.Time,default=datetime.now())
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
@@ -84,9 +84,9 @@ class Comment(db.Model):
 
 
     @classmethod
-    def get_comments(cls,pitch_id):
+    def get_comments(cls, id):
 
-        comments = Comment.query.filter_by(pitch_id=pitch_id).all()
+        comments = Comment.query.filter_by(pitch_id= id).all()
         return comments
 
 

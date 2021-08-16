@@ -19,8 +19,8 @@
             <p class="text-muted">{{ pitch.user.username}}</p>
             <hr>
             <div>
-                <h3>{{ pitch.pitch_title }}</h3>
-                <h5>Category: {{pitch.category}}</p>
+                <h1>{{ pitch.pitch_title }}</h1>
+                <h3>Category: {{pitch.category}}</p>
                 <hr>
                 <p>{{pitch.pitch_content | truncate(40)}}</p>
                 <p class="text-muted">Posted on {{ pitch.posted}}</p>
@@ -54,7 +54,7 @@
         <div class="col md-12">
             <p class="text-muted user">{{ comment.user.username}}</p>
             <p> {{comment.pitch_comment}}</p>
-            <p class="text-muted time">Commented on  {{comment.posted}}</p>
+            <p class="time">Commented on  {{comment.posted}}</p>
 
         </div>
         <hr>

@@ -25,11 +25,12 @@ def home():
     pform = PitchForm()
 
     if pform.validate_on_submit():
-        pitch = Pitch(pitch_title = pform.title.data, category = pform.category.data, pitch_content = pform.pitch.data, user=current_user)
+        new_pitch = Pitch(pitch_title = pform.title.data, category = pform.category.data, pitch_content = pform.pitch.data, user=current_user)
 
+        new_pitch.save_pitch()
 
-        db.session.add(pitch)
-        db.session.commit()
+        # db.session.add(new_pitch)
+        # db.session.commit()
 
         return redirect (url_for ("main.home"))
 
@@ -156,11 +157,11 @@ def more_pitch_details(id):
     
 
     if cForm.validate_on_submit():
-        comment = Comment(pitch_comment = cForm.comment.data,pitch_id=single_pitch.pitch_id, user=current_user)
+        new_comment = Comment(pitch_comment = cForm.comment.data,pitch_id=single_pitch.pitch_id, user=current_user)
 
-
-        db.session.add(comment)
-        db.session.commit()
+        new_comment.save_comment()
+        # db.session.add(new_comment)
+        # db.session.commit()
 
         
         return redirect (url_for ("main.more_pitch_details", id= single_pitch.pitch_id))
