@@ -12,6 +12,11 @@
     font-family: 'Aclonica', sans-serif;
 }
 
+.navbar-nav li a:hover{
+    color: azure !important;
+}
+
+
 .navbar-brand{
     color: thistle !important;
     font-size: 25px;
@@ -196,6 +201,14 @@
     color: black;
     font-weight: bold;
 
+}
+
+.update-bio{
+    color: white;
+}
+
+.update-bio img{
+    border-radius: 10%;
 }
 
 

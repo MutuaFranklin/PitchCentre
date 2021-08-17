@@ -128,7 +128,7 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
     
 
-@main.route('/pitch/more<int:id>',methods=['GET','POST'])
+@main.route('/pitch/more/<int:id>',methods=['GET','POST'])
 @login_required
 def more_pitch_details(id):
     single_pitch=Pitch.query.get(id)
@@ -145,7 +145,7 @@ def more_pitch_details(id):
         db.session.add(single_pitch)
         db.session.commit()
 
-        # return redirect("/pitch/more/{pitch_id}",pitch_id= single_pitch.pitch_id)
+        return redirect(url_for( "main.more_pitch_details", id= single_pitch.pitch_id))
 
     elif request.args.get("down_vote"):
         single_pitch.down_vote=single_pitch.down_vote+1
@@ -153,7 +153,7 @@ def more_pitch_details(id):
         db.session.add(single_pitch)
         db.session.commit()
 
-        # return redirect("/pitch/more/{pitch_id}", pitch_id= single_pitch.pitch_id)
+        return redirect(url_for("/pitch/more/{pitch_id}", pitch_id= single_pitch.pitch_id))
     
 
     if cForm.validate_on_submit():
