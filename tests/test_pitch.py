@@ -6,13 +6,8 @@ from app import db
 class TestPitch(unittest.TestCase):
 
     def setUp(self):
-<<<<<<< HEAD
         self.user_frank = User(id = 2, username = 'frank', email = 'frankmutua@yahoo.com', password_secure = '54321')
         self.new_pitch = Pitch(pitch_id=2, pitch_title='Data fetching with API',category = 'Technology Pitch', pitch_content ='This is how it goes', posted = '15/8/2021', user_id = 2, down_vote = 0, up_vote =0 )
-=======
-        self.user_frank = User(id = 1, username = 'frank', email = 'frankmutua@yahoo.com', password_secure = '54321')
-        self.new_pitch = Pitch(pitch_id=34, pitch_title='Data fetching with API',category = 'Technology Pitch', pitch_content ='This is how it goes', posted = '15/8/2021', user_id = 1, up_vote =30, down_vote = 9,)
->>>>>>> 322c028a2a9dc8bbd373e888aba8e0eac26e43e4
 
 
 
@@ -37,14 +32,8 @@ class TestPitch(unittest.TestCase):
 
 
   
-<<<<<<< HEAD
     def test_save_pitch(self):
         db.session.add(self.user_frank)
         db.session.commit()
         self.new_pitch.save_pitch()
         self.assertTrue(len(Pitch.query.all())>0)
-=======
-    # def test_save_pitch(self):
-    #     self.new_pitch.save_pitch()
-    #     self.assertTrue(len(Pitch.query.all())>0)
->>>>>>> 322c028a2a9dc8bbd373e888aba8e0eac26e43e4
