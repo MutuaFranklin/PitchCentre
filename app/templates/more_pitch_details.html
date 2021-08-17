@@ -28,10 +28,16 @@
 
                 </div>
                   <div class="row buttons">
-                    <button type="button" class="btn btn-success"><i class="fas fa-thumbs-up"></i>{{single_pitch.up_vote}}</button>
-                        
-                    <button type="button" class="btn btn-danger"><i class="fas fa-thumbs-down"></i>{{single_pitch.down_vote}}</button>
-    
+                    <a href="{{url_for('main.more_pitch_details',id=single_pitch.pitch_id )}}?up_vote=1">
+                      <button type="button" class="btn btn-success">
+                        <i class="fas fa-thumbs-up"></i>{{single_pitch.up_vote}}
+                      </button>
+                    </a>
+                    <a href="{{url_for('main.more_pitch_details',id=single_pitch.pitch_id )}}?down_vote=1">
+                      <button type="button" class="btn btn-danger">
+                        <i class="fas fa-thumbs-down"></i>{{single_pitch.down_vote}}
+                      </button>
+                    </a>
                   </div>
                   <hr>
                 <div class="row user-details">
@@ -42,23 +48,10 @@
                 
               </div>
             </div>
-            
-           
-
-          
-
+               
           </div>
-            
-            
+                      
           
-            
-            
-            <!-- <a action="/pitch/more/{{single_pitch.pitch_id}}?up_vote=1">{{ single_pitch.up_vote}}</span></button></a>
-            
-            <a action="/pitch/more/{{single_pitch.pitch_id}}?down_vote=1"><button type="button" class="btn btn-danger">dislikes <span>{{ single_pitch.up_vote}}</span></button></a>
-            
-          -->
-    
           <div class="col-md-12 commentForm">
             <div class="col-md-8">
               {{wtf.quick_form(cForm)}}

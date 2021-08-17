@@ -12,6 +12,11 @@
     font-family: 'Aclonica', sans-serif;
 }
 
+.navbar-nav li a:hover{
+    color: azure !important;
+}
+
+
 .navbar-brand{
     color: thistle !important;
     font-size: 25px;
