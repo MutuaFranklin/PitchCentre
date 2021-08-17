@@ -19,10 +19,6 @@ class TestPitch(unittest.TestCase):
     def tearDown(self):
         Pitch.query.delete()
         User.query.delete()
-        # db.session.delete(self.new_pitch)
-        # db.session.commit()
-        # db.session.delete(self.new_pitch)
-        # db.session.commit()
 
 
     def test_instance(self):
