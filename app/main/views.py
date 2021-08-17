@@ -21,7 +21,9 @@ def index():
 @main.route('/home', methods= ['POST', 'GET'])
 @login_required
 def home():
-
+    '''
+        View after login page function that returns the home page and its data
+    '''
     pform = PitchForm()
 
     if pform.validate_on_submit():
@@ -35,12 +37,9 @@ def home():
         return redirect (url_for ("main.home"))
 
 
-    '''
-    View root page function that returns the index page and its data
-    '''
+   
     pitches = Pitch.query.all()
-    # random = "Product Pitch"
-    # pitches = Pitch.query.filter_by(category =random).all()
+    
 
     title = 'PitchCentere Home'
     return render_template('home.html', title = title, pform = pform, pitch=pitches)
@@ -153,7 +152,7 @@ def more_pitch_details(id):
         db.session.add(single_pitch)
         db.session.commit()
 
-        return redirect(url_for("/pitch/more/{pitch_id}", pitch_id= single_pitch.pitch_id))
+        return redirect(url_for( "main.more_pitch_details", id= single_pitch.pitch_id))
     
 
     if cForm.validate_on_submit():
