@@ -28,12 +28,12 @@
 
                 </div>
                   <div class="row buttons">
-                    <a href="/pitch/more/{{single_pitch.pitch_id}}?up_vote=1">
+                    <a href="{{url_for('main.more_pitch_details',id=single_pitch.pitch_id )}}?up_vote=1">
                       <button type="button" class="btn btn-success">
                         <i class="fas fa-thumbs-up"></i>{{single_pitch.up_vote}}
                       </button>
                     </a>
-                    <a href="/pitch/more/{{single_pitch.pitch_id}}?down_vote=1">
+                    <a href="{{url_for('main.more_pitch_details',id=single_pitch.pitch_id )}}?down_vote=1">
                       <button type="button" class="btn btn-danger">
                         <i class="fas fa-thumbs-down"></i>{{single_pitch.down_vote}}
                       </button>
