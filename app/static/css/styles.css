@@ -28,7 +28,7 @@
   
 
  body{
-    height: 870px;
+    height: 100%;
     width: 100%;
     background-color: rgb(42, 13, 93);
 
@@ -36,7 +36,7 @@
 }
 
 .login{
-    height: 70%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,10 +44,13 @@
     background-color: rgb(42, 13, 93, 0.1);
 
 }
+.login .row{
+    margin-top: 15%;
+}
 
 .signup{
 
-    height: 800px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,8 +59,13 @@
 }
 
 .signup .row{
-    top: 5%;
+    margin-top: 15%;
 }
+
+.signup .row .signup-image{
+    margin-top: 3%;
+}
+
 
 .pitch-card{
     border: 1px solid grey;
@@ -191,6 +199,13 @@
 
 }
 
+.prof-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1 rem;
+}
 .prof-update-form{
     margin-top: 15px;
     color: white;

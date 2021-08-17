@@ -17,15 +17,15 @@
   <div class="row">
 
     <div class="col-md-3 profile-details">
-      <div class="col-md-12">
+      <div class="col-md-12 prof-image">
         <h4>Profile</h4>
 
         {% if user.profile_pic_path %}
     
-        <img src="{{url_for('static',filename=user.profile_pic_path)}}"style="border-radius: 5%; height:100%; width: 100%;" alt="" class="img-thumbnail">
+        <img src="{{url_for('static',filename=user.profile_pic_path)}}"style="border-radius: 5%; height:30rem; width: 30rem;" alt="" class="img-thumbnail">
     
         {%else%}
-        <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" style="border-radius: 5%; height:150px; width: 100%;"alt="" class="img-thumbnail">  
+        <img src="{{url_for('static',filename='photos/avartar.jpeg')}}" style="border-radius: 5%; height:100%; width: 100%;"alt="" class="img-thumbnail">  
         {% endif %}
       </div>
       <div class="user-profile">
