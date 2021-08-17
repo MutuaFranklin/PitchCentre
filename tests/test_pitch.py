@@ -21,14 +21,14 @@ class TestPitch(unittest.TestCase):
 
 
     def test_check_instance_variables(self):
-        self.assertEquals(self.new_pitch.pitch_id,34)
+        self.assertEquals(self.new_pitch.pitch_id,2)
         self.assertEquals(self.new_pitch.pitch_title,'Data fetching with API')
         self.assertEquals(self.new_pitch.category,'Technology Pitch')
         self.assertEquals(self.new_pitch.pitch_content,'This is how it goes')
         self.assertEquals(self.new_pitch.posted,'15/8/2021')
-        self.assertEquals(self.new_pitch.user_id, 1)
-        self.assertEquals(self.new_pitch.up_vote,30)
-        self.assertEquals(self.new_pitch.down_vote,9)
+        self.assertEquals(self.new_pitch.user_id, 2)
+        self.assertEquals(self.new_pitch.up_vote,0)
+        self.assertEquals(self.new_pitch.down_vote,0)
 
 
   
