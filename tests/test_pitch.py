@@ -36,4 +36,4 @@ class TestPitch(unittest.TestCase):
         db.session.add(self.user_frank)
         db.session.commit()
         self.new_pitch.save_pitch()
-        self.assertTrue(len(Pitch.query.all())>0)
+        self.assertTrue(len(Pitch.query.all())==1)

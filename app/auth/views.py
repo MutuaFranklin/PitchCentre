@@ -30,10 +30,10 @@ def logout():
 
 @auth.route('/signup',methods = ["GET","POST"])
 def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
+    rForm = RegistrationForm()
+    if rForm.validate_on_submit():
         # print(form.password.data)
-        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
+        user = User(email = rForm.email.data, username = rForm.username.data,password = rForm.password.data)
         db.session.add(user)
         db.session.commit()
         
@@ -43,4 +43,4 @@ def register():
     title = "New Account"
 
         
-    return render_template('auth/signup.html',registration_form = form, title = title)
+    return render_template('auth/signup.html',registration_form = rForm, title = title)
