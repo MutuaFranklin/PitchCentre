@@ -7,28 +7,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"> PitchCentre </a>
+      <a class="navbar-brand" href="/"> <i class="far fa-file-powerpoint"></i>PitchCentre </a>
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
 
-
-          <li><a href="/">PitchHome</a></li>
-
           {% if current_user.is_authenticated %}
-          <li><a href="{{url_for('main.home')}}">Home</a></li>
+          <li><a href="{{url_for('main.home')}}"><i class="fas fa-house-user" style="margin-right: 5px;"></i>Home</a></li>
           <li><a href="{{url_for('main.product')}}">Product</a></li>
           <li><a href="{{url_for('main.technology')}}">Technology</a></li>
           <li><a href="{{url_for('main.interview')}}">Interview</a></li>
           <li><a href="{{url_for('main.fashion')}}">Fashion</a></li>
 
           <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-          <li style="color:rgb(18, 219, 18); font-weight: bold; padding:15px;">{{current_user.username}}</li>          
+          <li style="color:rgb(18, 219, 18); font-weight: bold; padding:15px;"><i class="far fa-user" style="margin-right: 5px;"></i>{{current_user.username}}</li>          
           <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
           
           {% else %}
           
-          <!-- <li><a href="{{url_for('main.index')}}">PitchHome</a></li> -->
+          <li><a href="/">PitchHome</a></li>
           <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
           <li><a href="{{url_for('auth.register')}}">Sign Up</a></li>
 
