@@ -60,7 +60,7 @@
 
           <div class="col-md-12 comments">
             <hr>
-            <button type="button" class="btn btn-primary">0 Comments</button>
+            <button type="button" class="btn btn-primary">{{ single_pitch.comments.count()}} Comment(s)</button>
             <hr>
             {{macro.displayComments(comments)}}
           </div>

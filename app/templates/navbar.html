@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav navbar-right">
 
 
-
+          <li><a href="/">PitchHome</a></li>
 
           {% if current_user.is_authenticated %}
           <li><a href="{{url_for('main.home')}}">Home</a></li>
@@ -25,9 +25,10 @@
           <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
           <li style="color:rgb(18, 219, 18); font-weight: bold; padding:15px;">{{current_user.username}}</li>          
           <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+          
           {% else %}
           
-          <li><a href="{{url_for('main.index')}}">PitchHome</a></li>
+          <!-- <li><a href="{{url_for('main.index')}}">PitchHome</a></li> -->
           <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
           <li><a href="{{url_for('auth.register')}}">Sign Up</a></li>
 

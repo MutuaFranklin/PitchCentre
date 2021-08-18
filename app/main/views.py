@@ -35,12 +35,8 @@ def home():
         # db.session.commit()
 
         return redirect (url_for ("main.home"))
-
-
    
-    pitches = Pitch.query.all()
-    
-
+    pitches = Pitch.query.all()    
     title = 'PitchCentere Home'
     return render_template('home.html', title = title, pform = pform, pitch=pitches)
 
@@ -132,9 +128,6 @@ def update_pic(uname):
 def more_pitch_details(id):
     single_pitch=Pitch.query.get(id)
     comments= Comment.query.filter_by(pitch_id=id).all()
-    commentCount = 'pitch_comment'
-    # total_comments = Comment.query.filter_by(commentCount).count()
-
     cForm=CommentForm()
 
 
@@ -161,14 +154,11 @@ def more_pitch_details(id):
         new_comment.save_comment()
         # db.session.add(new_comment)
         # db.session.commit()
-
-        
+      
         return redirect (url_for ("main.more_pitch_details", id= single_pitch.pitch_id))
 
 
-
-
     
-    return render_template('more_pitch_details.html',comments=comments, single_pitch=single_pitch, cForm=cForm)
+    return render_template('more_pitch_details.html',comments=comments,single_pitch=single_pitch, cForm=cForm)
 
    
