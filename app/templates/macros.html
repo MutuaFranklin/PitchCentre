@@ -25,7 +25,7 @@
                 <h3>Category: {{pitch.category}}</p>
                 <hr>
                 <p>{{pitch.pitch_content | truncate(40)}}</p>
-                <p class="text-muted">Posted on {{ pitch.posted}}</p>
+                <p class="text-muted">Posted on {{ pitch.posted.strftime('%Y-%m-%d %H:%M') }}</p>
                 <div class="row">
                     
                     <button type="button" class="btn btn-primary">{{ pitch.comments.count()}} Comments</button>
