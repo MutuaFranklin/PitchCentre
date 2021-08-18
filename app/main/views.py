@@ -43,6 +43,7 @@ def home():
 
 
 @main.route('/user/<uname>')
+@login_required
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
 
@@ -53,6 +54,7 @@ def profile(uname):
     return render_template("profile/profile.html", pitches = pitches,user=current_user)
 
 @main.route('/product')
+@login_required
 def product():
 
     title = 'Pitch-Product'
@@ -63,6 +65,7 @@ def product():
     return render_template('categories.html', title = title, pitch=pitches, h4=h4)
 
 @main.route('/interview')
+@login_required
 def interview():
 
     title = 'Pitch-Interview'
@@ -73,6 +76,7 @@ def interview():
 
 
 @main.route('/technology')
+@login_required
 def technology():
 
     title = 'Technology-Pitch'
@@ -82,6 +86,7 @@ def technology():
     return render_template('categories.html', title = title, pitch = pitches, h4 =h4)
     
 @main.route('/fashion')
+@login_required
 def fashion():
 
     title = 'Fashion-Product'
