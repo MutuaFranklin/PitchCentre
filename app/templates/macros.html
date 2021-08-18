@@ -56,7 +56,7 @@
         <div class="col md-12">
             <p class="text-muted user">{{ comment.user.username}}</p>
             <p> {{comment.pitch_comment}}</p>
-            <p class="time">Commented on  {{comment.posted}}</p>
+            <p class="time">Commented on  {{comment.posted.strftime('%Y-%m-%d %H:%M')}}</p>
             
         </div>
         <hr>
