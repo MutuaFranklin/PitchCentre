@@ -3,7 +3,7 @@ from app.models import Pitch, Comment
 from flask_login import current_user
 from app import db
 
-class TestPitch(unittest.TestCase):
+class TestComment(unittest.TestCase):
 
     def setUp(self):
         self.new_pitch = Pitch(pitch_id=2, pitch_title='Data fetching with API',category = 'Technology Pitch', pitch_content ='This is how it goes', posted = '15/8/2021', user_id = 2, down_vote = 0, up_vote =0 )
